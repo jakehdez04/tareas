@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>  
+  <head>  
+
+    <title>
+      Tarea 6
+    </title> 
+    
+    <style>
+      .tareas{
+        background-color: rgb(108, 159, 161);
+        color: azure;
+        border: none;
+        height: 30px;
+        width: 100px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .titulo{
+        
+        font-size: 28px;
+        font-style: oblique;
+        font-weight: bold;
+        color: rgb(118, 159, 161);
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      .texto{
+        font-size: 18px;
+        padding-left: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .subtitulo{
+        background-color: rgb(108, 159, 161);
+        color: azure;
+        font-size: 30px;
+        text-align: center;
+        border: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 0px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: large;
+        font-family: Arial, Helvetica, sans-serif;  
+      }
+
+      .fotos{
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+
+  </head>
+
+  <body>  
+
+    <p class="titulo">
+      &#9886; Página de Tareas de Jacqueline Hernández &#9887;
+    </p>
+
+    <p class="subtitulo"> 
+     Tarea 6: Contador de casillas de una matriz 5x5
+    </p>
+
+    <pre class="texto">
+      #include &#60;stdio.h&#62;
+      #include &#60;stdlib.h&#62;
+
+        int main()
+        {
+            int x[5][5];
+            int i,j,a,b;
+            int num;
+            int total=0;
+            int contador=1;
+        
+            printf("Ingresa 25 numeros al azar del 1 al 20!\n");
+        
+            for(i=0;i&#60;=4;i++){
+                for(j=0;j&#60;=4;j++){
+                        scanf("%d", &num);
+                        x[i][j]=num;
+                }
+            }
+        
+            printf("\n");
+            printf("************************************");
+            printf("\n");
+            for(i=0;i&#60;=4;i++){
+                for(j=0;j&#60;=4;j++){
+                    printf("[%d]  ", x[i][j]);
+                    }
+                printf("\n");
+            }
+            printf("\n");
+            printf("************************************");
+            printf("\n");
+        
+            while(contador&#60;=20){
+                for(i=0;i&#60;=4;i++){
+                    for(j=0;j&#60;=4;j++){
+                        if(x[i][j]==contador){
+                            total=total+1;
+                        }
+                    }
+                }
+                if(total>=1){
+                    printf("El total de %d es: %d\n", contador, total);
+                }
+                total=0;
+                contador++;
+            }
+        
+        
+        
+        
+        
+        
+            return 0;
+        }
+
+    </pre>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>  
+  <head>  
+
+    <title>
+      Tarea 5
+    </title> 
+    
+    <style>
+      .tareas{
+        background-color: rgb(108, 159, 161);
+        color: azure;
+        border: none;
+        height: 30px;
+        width: 100px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .titulo{
+        
+        font-size: 28px;
+        font-style: oblique;
+        font-weight: bold;
+        color: rgb(118, 159, 161);
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      .texto{
+        font-size: 18px;
+        padding-left: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .subtitulo{
+        background-color: rgb(108, 159, 161);
+        color: azure;
+        font-size: 30px;
+        text-align: center;
+        border: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: 0px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: large;
+        font-family: Arial, Helvetica, sans-serif;  
+      }
+
+      .fotos{
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+
+  </head>
+
+  <body>  
+
+    <p class="titulo">
+      &#9886; Página de Tareas de Jacqueline Hernández &#9887;
+    </p>
+
+    <p class="subtitulo"> 
+     Tarea 5: Adivinador de un número
+    </p>
+
+    <pre class="texto">
+      #include <stdio.h>
+      #include <stdlib.h>
+        
+        int main(){
+        
+        int x=500;
+        int mom;
+        int correcto;
+        int lim_sup=1000;
+        int lim_inf=0;
+        
+        printf("Piensa en un numero… Ya?\n");
+        printf("El numero en el que pensaste es 500? \n\nIngresa 100 si lo adivine. Si no lo adivine, es mayor o menor? \nMayor - 1 Menor - 0\n");
+        scanf("%d", &mom);
+        
+        while (mom<2){
+        
+          if (mom == 0){
+            lim_sup = x;
+            x = x-((lim_sup-lim_inf)/2);
+            printf("El numero en el que pensaste es %d?\n\nIngresa 100 si lo adivine. Si no lo adivine, es mayor o menor? \nMayor - 1 Menor - 0\n", x);
+          }
+        
+          if (mom == 1){
+           lim_inf = x;
+           x = x+((lim_sup-lim_inf)/2);
+            printf("El numero en el que pensaste es %d?\n\nIngresa 100 si lo adivine. Si no lo adivine, es mayor o menor? \nMayor - 1 Menor - 0\n", x);
+           }
+
+           if (x == 999 && mom ==1){
+             x = 1000;
+           }
+         
+          scanf("%d", &mom);
+         }
+        
+        printf("\nEl numero en el que pensaste es el %d!", x);
+        
+        return 0;
+        }
+      </pre>
